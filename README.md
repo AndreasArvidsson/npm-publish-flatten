@@ -20,7 +20,7 @@ It does the following:
 
 ## Usage
 `node node_modules/publish-flatten --flatten dist`    
-In below examples I'm going to omitt the node_modules/ path for cleaner code.
+In below examples I'm going to omit the node_modules/ path for cleaner code.
 
 #### Default npm publish
 
@@ -73,9 +73,9 @@ Removes scripts and devDependencies from package.json before publishing.
 
 ## CLI arguments
 ```
-  --flatten         Directory to be flattened. Can be repeated for additional directories.
-  --strip           Field in package.json to strip/remove. Can be repeated for additional fields.
-  --keepResult      Keep temporary directory with the published files.
+ --flatten      Directory to be flattened. Can be repeated for additional directories.
+ --strip        Field in package.json to strip/remove. Can be repeated for additional fields.
+ --keepResult   Keep temporary directory with the published files.
 ```
 
 ### Additional arguments
