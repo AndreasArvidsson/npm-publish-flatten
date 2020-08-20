@@ -52,8 +52,12 @@ Sometimes you have information in your package.json that you don't want to publi
 Removes scripts and devDependencies from package.json before publishing.    
 `node publish-flatten --strip scripts --strip devDependencies`
 
+### Keep result files
+By default the modified files are stores in a temporary directory `.npmPublishFlatten` that is removed after process is done. By passing the `--keepResult` argument this directory is kept.
+`node publish-flatten --flatten dist --keepResult`
+
 ### Additional arguments
-All arguments that are not `--flatten` or `--strip` is passed on to the underlying npm publish process. This means that you can still pass arguments to npm publish.    
+All arguments that are not `--flatten`, `--strip`, or `--keepResult` is passed on to the underlying npm publish process. This means that you can still pass arguments to npm publish.    
 
 Parameter `--dry-run` is passed on to npm publish    
 `node publish-flatten --flatten dist --dry-run`

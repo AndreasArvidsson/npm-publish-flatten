@@ -4,14 +4,16 @@ const os = require("os");
 const { exec, spawn } = require("child_process");
 const del = require("del");
 const sourceDir = path.resolve();
-const buildDir = path.resolve(sourceDir, ".npmPublishFlattenBuild");
-const [dirs, strip, args] = parseArgs();
+const buildDir = path.resolve(sourceDir, ".npmPublishFlatten");
+const [dirs, strip, args, keepResult] = parseArgs();
 
 getFilesList().then(files => {
     copyFiles(files);
     updatePackageJson();
     publish().then(() => {
-        deleteBuildDir();
+        if (!keepResult) {
+            deleteBuildDir();
+        }
     })
 });
 
@@ -103,6 +105,7 @@ function parseArgs() {
     const dirs = [];
     const strip = [];
     const args = [];
+    let keepResult = false;
     for (let i = 2; i < process.argv.length; ++i) {
         const arg = process.argv[i];
         const value = getValue(i + 1);
@@ -119,6 +122,9 @@ function parseArgs() {
                 ++i;
             }
         }
+        else if (arg === "--keepResult") {
+            keepResult = true;
+        }
         else {
             args.push(arg);
         }
@@ -127,7 +133,7 @@ function parseArgs() {
     dirs.sort((a, b) => {
         return b.length - a.length;
     })
-    return [dirs, strip, args];
+    return [dirs, strip, args, keepResult];
 }
 
 function getValue(i) {
