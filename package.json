@@ -1,6 +1,6 @@
 {
     "name": "publish-flatten",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Publish npm packages with flattened source directory",
     "main": "src/index.js",
     "files": [
