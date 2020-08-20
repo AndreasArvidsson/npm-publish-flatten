@@ -1,5 +1,5 @@
 # NPM publish flatten
-Publish npm packages with flattened directory source
+Publish npm packages with flattened source directory
 
 ## Installation
 `npm install publish-flatten  --save`
@@ -53,15 +53,14 @@ Removes scripts and devDependencies from package.json before publishing.
 `node publish-flatten --strip scripts --strip devDependencies`
 
 ### Keep result files
-By default the modified files are stores in a temporary directory `.npmPublishFlatten` that is removed after process is done. By passing the `--keepResult` argument this directory is kept.
+By default the modified files are stores in a temporary directory `.npmPublishFlatten` that is removed after process is done. By passing the `--keepResult` argument this directory is kept.    
 `node publish-flatten --flatten dist --keepResult`
 
 ### Additional arguments
 All arguments that are not `--flatten`, `--strip`, or `--keepResult` is passed on to the underlying npm publish process. This means that you can still pass arguments to npm publish.    
 
-Parameter `--dry-run` is passed on to npm publish    
+Parameter `--dry-run` is passed on to npm publish.    
 `node publish-flatten --flatten dist --dry-run`
-
 
 ### Create npm script
 An easy way to always get your build with correct flattened dirs is to create an script in package.json.
