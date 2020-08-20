@@ -22,9 +22,9 @@ It does the following:
 `node node_modules/publish-flatten --flatten dist`    
 In below examples I'm going to omitt the node_modules/ path for cleaner code.
 
-### Default npm publish
+#### Default npm publish
 
-#### Published directory structure
+##### Published directory structure
 ```
 $ npm publish
 .
@@ -38,16 +38,16 @@ $ npm publish
         └── util.js.map
 ```
 
-#### Import code
+##### Import code
 ```js
 import project from "project/dist"
 import util from "project/dist/sub/util"
 ```
 
-### publish-flatten
+#### publish-flatten
 Multiple directories and sub directories can be flattened.
 
-#### Published directory structure
+##### Published directory structure
 ```
 $ node publish-flatten --flatten dist --flatten dist/sub
 .
@@ -59,7 +59,7 @@ $ node publish-flatten --flatten dist --flatten dist/sub
 └── util.js.map  
 ```
 
-#### Import code
+##### Import code
 ```js
 import project from "project"
 import util from "project/util"
@@ -70,7 +70,6 @@ Sometimes you have information in your package.json that you don't want to publi
 
 Removes scripts and devDependencies from package.json before publishing.    
 `node publish-flatten --strip scripts --strip devDependencies`
-
 
 ## CLI arguments
 ```
