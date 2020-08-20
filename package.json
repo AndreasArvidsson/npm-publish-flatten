@@ -1,0 +1,42 @@
+{
+    "name": "publish-flatten",
+    "version": "1.0.0",
+    "description": "Publish npm packages with flattened directory source",
+    "main": "src/index.js",
+    "files": [
+        "src/*"
+    ],
+    "scripts": {
+        "buildProd": "webpack --mode production --config webpack.config.js",
+        "buildDev": "webpack --mode development --config webpack.config.js",
+        "build": "rm dist/* & npm run buildProd && npm run buildDev"
+    },
+    "keywords": [
+        "npm",
+        "publish",
+        "flatten"
+    ],
+    "author": "Andreas Arvidsson",
+    "license": "MIT",
+    "homepage": "https://github.com/AndreasArvidsson/npm-publish-flatten",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/AndreasArvidsson/npm-publish-flatten.git"
+    },
+    "bugs": {
+        "url": "https://github.com/AndreasArvidsson/npm-publish-flatten/issues"
+    },
+    "dependencies": {
+        "del": "latest"
+    },
+    "devDependencies": {
+        "webpack": "latest",
+        "webpack-cli": "latest",
+        "babel-loader": "latest",
+        "eslint-loader": "latest",
+        "@babel/preset-env": "latest",
+        "@babel/core": "latest",
+        "eslint": "latest",
+        "babel-eslint": "latest"
+    }
+}
