@@ -7,8 +7,8 @@
     ],
     "scripts": {
         "testOrg": "npm publish --dry-run",
-        "testNoParams": "node ../src --dry-run",
-        "test": "node ../src --flatten dist --flatten dist/sub --strip scripts --strip devDependencies --dry-run"
+        "testNoParams": "node ../ --dry-run",
+        "test": "node ../ --flatten dist --flatten dist/sub --strip scripts --strip devDependencies --dry-run"
     },
     "devDependencies": {}
 }

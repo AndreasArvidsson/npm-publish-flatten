@@ -1,16 +1,9 @@
 {
     "name": "publish-flatten",
-    "version": "1.0.3",
+    "version": "1.1.0",
     "description": "Publish npm packages with flattened source directory",
-    "main": "src/index.js",
-    "files": [
-        "src/*"
-    ],
-    "scripts": {
-        "buildProd": "webpack --mode production --config webpack.config.js",
-        "buildDev": "webpack --mode development --config webpack.config.js",
-        "build": "rm dist/* & npm run buildProd && npm run buildDev"
-    },
+    "main": "index.js",
+    "scripts": {},
     "keywords": [
         "npm",
         "publish",
@@ -28,15 +21,5 @@
     },
     "dependencies": {
         "del": "latest"
-    },
-    "devDependencies": {
-        "webpack": "latest",
-        "webpack-cli": "latest",
-        "babel-loader": "latest",
-        "eslint-loader": "latest",
-        "@babel/preset-env": "latest",
-        "@babel/core": "latest",
-        "eslint": "latest",
-        "babel-eslint": "latest"
     }
 }
