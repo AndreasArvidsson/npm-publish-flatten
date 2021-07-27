@@ -58,6 +58,10 @@ function updatePackageJson() {
     if (json.main) {
         json.main = flatten(json.main);
     }
+    //Flatten bin to get correct path again.
+    if (json.bin) {
+        json.bin = flattenObject(json.bin);
+    }
     //Strip files so that all files in the build dir is included.
     delete json.files;
     //Strip user given paths
@@ -99,6 +103,18 @@ function flatten(path) {
         }
     }
     return path;
+}
+
+function flattenObject(obj) {
+    if (typeof obj === "string") {
+        return flatten(obj);
+    }
+    if (typeof obj === "object") {
+        for (const i in obj)  {
+            obj[i] = flatten(obj[i]);
+        }
+    }
+    return obj;
 }
 
 function parseArgs() {
