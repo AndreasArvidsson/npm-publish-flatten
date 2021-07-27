@@ -3,7 +3,7 @@
     "version": "1.1.0",
     "description": "Publish npm packages with flattened source directory",
     "main": "index.js",
-    "scripts": {},
+    "files": ["index.js"],
     "keywords": [
         "npm",
         "publish",
@@ -19,6 +19,7 @@
     "bugs": {
         "url": "https://github.com/AndreasArvidsson/npm-publish-flatten/issues"
     },
+    "scripts": {},
     "dependencies": {
         "del": "latest"
     }
